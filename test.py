@@ -1,13 +1,24 @@
-from core.RedditUser import RedditUser
-from core.RedditReport import RedditReport
+from core import RedditUser as ru
+from core import RedditReport as rr
 from utils import export
 
+# Your Reddit API credentials. More info: https://www.geeksforgeeks.org/python-praw-python-reddit-api-wrapper/
+client_id = 'your-client-id'
+client_secret = 'your-client-secret'
+user_agent = 'your-user-agent'
+reddit_user = ru.RedditUser(client_id, client_secret, user_agent)
 
-reddit = RedditUser("0Wtak14b9onCig", "lPZ0oxfDGS48Plhc-ig7pDp8dXw", "Busca-Titulares by Pitiful-Technology").get_reddit_instance()
+# Reddit object instance from praw library
+reddit_instance = reddit_user.get_reddit_instance()
 
-report = RedditReport(reddit, ['pics'], 3)
+# RedditReport instance
+subs_list = ['pics', 'askreddit']
+lines_per_sub = 3
+reddit_report = rr.RedditReport(reddit_instance, subs_list, lines_per_sub)
 
-report.generate_data()
+# Pulls data from Reddit
+report_data = reddit_report.generate_data()
 
-export.to_excel(report.report_data, "prueba.xlsx")
-
+# Uses utils module to export data to Excel file format
+filename = 'reddit_report_excel.xlsx'
+export.to_excel(report_data, filename)
