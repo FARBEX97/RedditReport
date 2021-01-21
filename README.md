@@ -1,9 +1,9 @@
 # Example
 
 ```
-from core import RedditUser as ru
-from core import RedditReport as rr
-from utils import export
+from redditreport.core import RedditUser as ru
+from redditreport.core import RedditReport as rr
+from redditreport.utils import export
 
 # Your Reddit API credentials.
 # More info: https://www.geeksforgeeks.org/python-praw-python-reddit-api-wrapper/
