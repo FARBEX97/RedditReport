@@ -1,4 +1,4 @@
-from redditreport import RedditPost
+from redditreport import RedditPost as rp
 
 
 class RedditReport:
@@ -24,6 +24,6 @@ class RedditReport:
                 self.submissions = self.reddit.subreddit(sub).hot(limit=self.lines_per_sub)
             
             for submission in self.submissions:
-                reddit_post = RedditPost(submission, sub)
+                reddit_post = rp.RedditPost(submission, sub)
 
                 self.report_data[sub].append(reddit_post)
