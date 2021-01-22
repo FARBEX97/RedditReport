@@ -33,5 +33,8 @@ class RedditReport:
         """Serializes report_data to a dict of strings"""
 
         for sub in self.report_data.keys():
+            i = 0
             for post_object in self.report_data[sub]:
-                post_object = post_object.__dict__
+                self.report_data[sub][i] = post_object.__dict__
+                i += 1
+
