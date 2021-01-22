@@ -27,3 +27,11 @@ class RedditReport:
                 reddit_post = rp.RedditPost(submission, sub)
 
                 self.report_data[sub].append(reddit_post)
+
+    
+    def serialize(self):
+        """Serializes report_data to a dict of strings"""
+
+        for sub in self.report_data.keys():
+            for post_object in self.report_data[sub]:
+                post_object = post_object.__dict__
