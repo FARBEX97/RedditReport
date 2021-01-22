@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="redditreport",
-    version="0.1.3",
+    version="0.2.1",
     author="FARBEX97",
     author_email="fernandoarbexcv@gmail.com",
     description="Tools to create reports using the Reddit API + praw library.",
