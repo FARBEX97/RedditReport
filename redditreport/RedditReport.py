@@ -1,4 +1,4 @@
-from core.RedditPost import RedditPost
+import RedditPost
 
 
 class RedditReport:
