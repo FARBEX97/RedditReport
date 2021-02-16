@@ -1,3 +1,10 @@
+# RedditReport
+Python package created for [trendsreport.app](https://trendsreport.app)
+
+This package relies on `praw` library to communicate with Reddit API. To install it:
+`pip install praw==7.1.4`
+`pip install redditreport`
+
 # Example
 
 ```
